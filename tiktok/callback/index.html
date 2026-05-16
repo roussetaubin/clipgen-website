@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>ClipGen – TikTok OAuth Callback</title>
+<link rel="icon" type="image/png" href="/icon.png">
+<style>body{font-family:Arial,sans-serif;background:#0d0d0d;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:20px}.box{max-width:520px}.box img{width:96px;border-radius:18px;margin-bottom:1rem}.box h1{color:#e63946;margin-bottom:1rem}.box p{color:#aaa;line-height:1.6}.box code{background:#1a1a1a;border:1px solid #333;padding:6px 10px;border-radius:6px;color:#fff}.box a{color:#e63946}</style>
+<script>
+(function(){
+  var qs = window.location.search;
+  var local = 'http://localhost:5000/tiktok/callback' + qs;
+  // Tente une redirection immediate vers le serveur local ClipGen
+  setTimeout(function(){ window.location.replace(local); }, 200);
+  document.addEventListener('DOMContentLoaded', function(){
+    var l = document.getElementById('manual');
+    if (l) l.href = local;
+  });
+})();
+</script>
+</head>
+<body>
+<div class="box">
+<img src="/icon.png" alt="ClipGen">
+<h1>Redirecting to ClipGen…</h1>
+<p>If nothing happens, make sure your local ClipGen app is running at <code>localhost:5000</code> and then <a id="manual" href="#">click here</a>.</p>
+</div>
+</body></html>
